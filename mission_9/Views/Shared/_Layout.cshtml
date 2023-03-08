@@ -8,27 +8,23 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <header>
 
         <div class="bg-dark text-white p-2">
             <span class="navbar-brand ml-2">BOOK STORE</span>
         </div>
+
         <div class="row m-1 p-1">
-            <div id="categories" class="col-4">
+
+            <div id="types" class="col-3">
+                <vc:types></vc:types>
             </div>
-            <div class="col-4">
+
+            <div class="col-9">
                 @RenderBody()
             </div>
+
         </div>
 
-        @*<footer class="border-top footer text-muted">
-            <div class="container">
-                &copy; 2023 - mission_9 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </footer>*@
-        <script src="~/lib/jquery/dist/jquery.min.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-        @RenderSection("Scripts", required: false)
+
 </body>
 </html>
