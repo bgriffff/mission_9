@@ -6,7 +6,7 @@
     <div class="bg-faded p-1">
         <h4>
             @Model.Title
-            <span class="badge badge-pill badge-primary" style="float:right">
+            <span class="badge badge-pill badge-dark" style="float:right">
                 <small>@Model.Price.ToString("c")</small>
             </span>
         </h4>
@@ -26,7 +26,7 @@
         <input type="hidden" name="returnURL" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
         <span class="card-text">
-            <button type="submit" class="btn btn-success btn-sm float-end">Donate</button>
+            <button type="submit" class="btn btn-primary btn-sm float-end">Buy</button>
         </span>
     </form>
 </div>

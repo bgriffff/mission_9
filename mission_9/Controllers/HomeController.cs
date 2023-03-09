@@ -17,14 +17,14 @@ namespace mission_9.Controllers
             repo = temp;
         }
 
-        public IActionResult Index(string category, int pageNum = 1)
+        public IActionResult Index(string Category, int pageNum = 1)
         {
             int pageSize = 10;
 
             var x = new BooksViewModel
             {
                 Books = repo.Books
-                .Where(b => b.Category == category || category == null)
+                .Where(b => b.Category == Category || Category == null)
                 .OrderBy(b => b.Title)
                 //Skips the first 5
                 .Skip((pageNum - 1) * pageSize)
@@ -35,9 +35,9 @@ namespace mission_9.Controllers
                 {
                     // if categoryType is null then just have normal pages. If categoryType has something then get the count of that 
                     // categoryType
-                    TotalNumProjects = (category == null
+                    TotalNumProjects = (Category == null
                                             ? repo.Books.Count()
-                                            : repo.Books.Where(x => x.Category == category).Count()),
+                                            : repo.Books.Where(x => x.Category == Category).Count()),
                     ProjectsPerPage = pageSize,
                     CurrentPage = pageNum
                 }

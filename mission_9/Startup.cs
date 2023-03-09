@@ -61,8 +61,8 @@ namespace mission_9
             app.UseEndpoints(endpoints =>
             {
                 //categoryType from Default page
-                endpoints.MapControllerRoute("typepage",
-                    "{category}/Page{pageNum}",
+                endpoints.MapControllerRoute("categoryPage",
+                    "{Category}/Page{pageNum}",
                     new { Controller = "Home", action = "Index" });
 
                 // creates better slugs (part at the end of a url to show page number)
@@ -75,8 +75,8 @@ namespace mission_9
                     );
 
                 //pages after you choose a categoryType
-                endpoints.MapControllerRoute("type",
-                    "{category}",
+                endpoints.MapControllerRoute("category",
+                    "{Category}",
                     new { Controller = "Home", action = "Index", pageNum = 1 }
                     );
 

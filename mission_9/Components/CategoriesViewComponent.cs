@@ -7,25 +7,25 @@ using System.Threading.Tasks;
 
 namespace mission_9.Components
 {
-    public class TypesViewComponents : ViewComponent
+    public class CategoriesViewComponent : ViewComponent
     {
         private IBookStoreRepository repo { get; set; }
 
-        public TypesViewComponents(IBookStoreRepository temp)
+        public CategoriesViewComponent(IBookStoreRepository temp)
         {
             repo = temp;
         }
 
         public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedType = RouteData?.Values["category"];
+            ViewBag.SelectedCategory = RouteData?.Values["Category"];
 
-            var types = repo.Books
+            var categories = repo.Books
                 .Select(x => x.Category)
                 .Distinct()
                 .OrderBy(x => x);
 
-            return View(types);
+            return View(categories);
         }
     }
 }

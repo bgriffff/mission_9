@@ -9,22 +9,31 @@
 </head>
 <body>
 
-        <div class="bg-dark text-white p-2">
-            <span class="navbar-brand ml-2">BOOK STORE</span>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="~/img/icons8-open-book.gif" width="30" height="30" class="d-inline-block align-top" alt="" />
+            <b>BOOKSTORE</b>
+        </a>
+    </nav>
+
+    <div class="row m-1 p-1">
+
+        <div id="types" class="col-3">
+            <vc:categories></vc:categories>
         </div>
 
-        <div class="row m-1 p-1">
-
-            <div id="types" class="col-3">
-                <vc:types></vc:types>
-            </div>
-
-            <div class="col-9">
-                @RenderBody()
-            </div>
-
+        <div class="col-9">
+            @RenderBody()
         </div>
 
+    </div>
 
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            </ul>
+            <p class="text-center text-muted">&copy; 2023 Brandon Griffiths</p>
+        </footer>
+    </div>
 </body>
 </html>

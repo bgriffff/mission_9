@@ -34,7 +34,7 @@ namespace mission_9.Models
         public double CalculateTotal()
         {
             // has a default of always donating 25$
-            double sum = Items.Sum(x => x.Quantity * 25);
+            double sum = Items.Sum(x => x.Quantity * x.Book.Price);
 
             return sum;
         }
