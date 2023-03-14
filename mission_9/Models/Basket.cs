@@ -31,6 +31,21 @@ namespace mission_9.Models
                 line.Quantity += qty;
             }
         }
+
+
+        public virtual void RemoveItem(Book book)
+        {
+            Items.RemoveAll(x => x.Book.BookId == book.BookId);
+
+        }
+
+        //Clears things from the list
+        public virtual void ClearBasket()
+        {
+            Items.Clear();
+        }
+
+
         public double CalculateTotal()
         {
             // has a default of always donating 25$
