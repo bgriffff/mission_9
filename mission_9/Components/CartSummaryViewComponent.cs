@@ -9,14 +9,14 @@ namespace mission_9.Components
 {
     public class CartSummaryViewComponent : ViewComponent
     {
-        private Buy buy;
-        public CartSummaryViewComponent(Buy buyService)
+        private Basket basket;
+        public CartSummaryViewComponent(Basket basketService)
         {
-            buy = buyService;
+            basket = basketService;
         }
         public IViewComponentResult Invoke()
         {
-            return View(buy);
+            return View(basket);
         }
     }
 }

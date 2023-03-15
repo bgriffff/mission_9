@@ -2,10 +2,11 @@
 
 namespace mission_9.Migrations
 {
-    public partial class Buy : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+
             migrationBuilder.CreateTable(
                 name: "Buy",
                 columns: table => new
@@ -19,8 +20,7 @@ namespace mission_9.Migrations
                     Country = table.Column<string>(nullable: false),
                     State = table.Column<string>(nullable: false),
                     City = table.Column<string>(nullable: false),
-                    Zip = table.Column<string>(nullable: false),
-                    Anonymous = table.Column<bool>(nullable: false)
+                    Zip = table.Column<string>(nullable: false)
                 },
                 constraints: table =>
                 {

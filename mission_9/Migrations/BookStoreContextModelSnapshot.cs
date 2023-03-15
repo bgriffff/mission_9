@@ -91,9 +91,6 @@ namespace mission_9.Migrations
                     b.Property<string>("AddressLine3")
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Anonymous")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("TEXT");
