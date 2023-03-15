@@ -18,5 +18,7 @@ namespace mission_9.Models
 
 
         public DbSet<Book> Books { get; set; }
+
+        public DbSet<Buy> Buy { get; set; }
     }
 }

@@ -13,10 +13,11 @@ namespace mission_9.Pages
     {
         private IBookStoreRepository repo { get; set; }
 
-        public BuyModel(IBookStoreRepository temp)
+        public BuyModel(IBookStoreRepository temp, Basket b)
         {
             //instance of your database
             repo = temp;
+            basket = b;
         }
 
         //instance of Basket
@@ -31,7 +32,6 @@ namespace mission_9.Pages
             //returns to original url
             ReturnUrl = returnUrl ?? "/";
 
-            basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
         }
 
         public IActionResult OnPost(int bookid, string returnUrl)
@@ -39,17 +39,19 @@ namespace mission_9.Pages
             //get info for specific project
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookid);
 
-            //get the session Json or Have to set up a new instance of a basket. ?? means null coalescing operator. returns value of left hand operand if null otherwise
-            // it evaluates the right-hand operand and returns its result
-            basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
-
             //this is a method in the Basket class
             basket.AddItem(b, 1);
 
-            //sends the basket
-            HttpContext.Session.SetJson("basket", basket);
 
             //takes you back to where you were
+            return RedirectToPage(new { ReturnUrl = returnUrl });
+        }
+
+        public IActionResult OnPostRemove(int bookId, string returnUrl)
+        {
+            //removes item
+            basket.RemoveItem(basket.Items.First(x => x.Book.BookId == bookId).Book);
+
             return RedirectToPage(new { ReturnUrl = returnUrl });
         }
     }
