@@ -40,7 +40,7 @@ namespace mission_9.Controllers
                 repo.SaveBuy(buy);
                 basket.ClearBasket();
 
-                return RedirectToPage("/DonationCompleted");
+                return RedirectToPage("/PurchaseCompleted");
             }
             else
             {

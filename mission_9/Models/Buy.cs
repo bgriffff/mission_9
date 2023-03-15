@@ -37,7 +37,5 @@ namespace mission_9.Models
         [Required(ErrorMessage = "Please enter a ZIP code")]
         public string Zip { get; set; }
 
-        public bool Anonymous { get; set; }
-
     }
 }

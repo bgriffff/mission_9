@@ -6,15 +6,22 @@
     <title>@ViewData["Title"] - mission_9</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-light">
-        <a class="navbar-brand" href="#">
-            <img src="~/img/icons8-open-book.gif" width="30" height="30" class="d-inline-block align-top" alt="" />
-            <b>BOOKSTORE</b>
-        </a>
-    </nav>
+
+    <div class="bg-dark text-white p-2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">SPORTS STORE</div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="row m-1 p-1">
 
